@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bus Arrival App</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar border-2 bg-warning bg-gradient p-2 bg-opacity-75">
+    <div class="container-fluid text-white">
+      <img src="Assets/buslogo.png" alt="buslogo" class="d-inline-block align-text-top" id="buslogo">
+      <img src="Assets/SgLogo2.png" alt="buslogo" class="d-inline-block align-text-top" id="singaporelogo">
+     
+      
+    </div>
+  </nav>
+  <!-- end of navbar -->
+
+  <!-- header -->
+  <header class="text-center py-5">
+    <img src="Assets/bus_logo2.png" class="rounded mx-auto d-block" alt="Bus logo" id="bus_logo2">
+  </header>
+  <!-- End of header -->
+
+  <section id="infoContainer" class="container mt-2">
+    <div class="col-md-6">
+      <div class="card border-4 bg-transparent" style="width: 70rem;">
+        <div class="card-body text-white">
+          <h3 class="card-title">Bus Arrival App</h3>
+          <h6 class="card-subtitle mb-2 text-white">Discover the estimated time of arrival (ETA) for your upcoming bus in Singapore!</h6>
+          <br>
+
+          <!-- bus arrival search container -->
+          <form class="row g-3">
+
+            <div class="col-auto">
+              <label for="busStopId" readonly class="form-control-plaintext text-white">Enter Bus Stop ID :</label>
+            </div>
+            <div class="col-sm-2">
+              <input type="text" class="form-control" id="bus-stop-id" name="busStopId" placeholder="Bus Stop ID">
+            </div>
+            <div class="col-auto">
+              <button id="submit" type="button" class="btn btn-warning mb-3" onclick="getBusTiming()">Search</button>
+            </div>
+            <div id="reminder" class="col-auto">
+
+            </div>
+          </form>
+          <!-- end of bus arrival search container -->
+
+          <!-- Filter Bus No section -->
+          <form class="row g-3">
+            
+            <!-- Label for the bus number filter -->
+            <div class="col-auto">
+              <label for="busFilter" readonly class="form-control-plaintext text-white">Filter By Bus Number :</label>
+            </div>
+
+            <!-- Filter Bus No selection (dropdown) -->
+            <div class="col-sm-2">
+              <div class="dropdown">
+                
+                <!-- Button to trigger the dropdown -->
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select Bus Number <!-- Updated placeholder text -->
+                </button>
+
+                <!-- Dropdown menu for bus number selection -->
+                <ul class="dropdown-menu" id="bus-number-dropdown">
+                  <!-- Dropdown items will be populated dynamically by JavaScript -->
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-auto">
+              <!-- Clear filter button -->
+              <a href="#" class="btn btn-warning" onclick="clearFilter()">Clear Filter</a>
+            </div>
+
+          </form>
+          <!-- end of filter bus No Section -->
+
+          <br>
+
+          <div class="card">
+            <div class="card-header bg-warning">
+              <strong>Arrival Bus Detail</strong>
+            </div>
+            <div class="card-body">
+              <!-- bawah ni nak letak masa (guna get date) -->
+              <p class="card-text" id="current-time"></p>
+
+              <div id="station-info-table">
+                <table class="table table-bordered border-warning table-hover bg-warning">
+                  <thead>
+                    <tr class="text-center">
+                      <th scope="col">Current Station</th>
+                      <th scope="col">Destination</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="arrival-info-table">
+                <table class="table table-bordered border-warning table-hover bg-warning">
+                  <thead>
+                    <tr class="text-center">
+                      <th scope="col">Bus No.</th>
+                      <th scope="col">Next Bus (ETA)</th>
+                      <th scope="col">Next Second Bus (ETA)</th>
+                      <th scope="col">Next Third Bus (ETA)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+               <p class="card-text">*Data will auto refresh every 15 seconds</p>
+            </div>
+          </div>
+
+          <br>
+          <div class="col-auto d-flex justify-content-center">
+            <a href="#" class="btn btn-warning" onclick="resetAll()">Reset</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+  <!-- footer -->
+  <footer class="bg-black bg-gradient bg-opacity-75 p-2 text-white text-center py-3">
+    <p>&copy; 2024 Faris Danial. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
