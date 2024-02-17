@@ -5,7 +5,7 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  
+
   background-image: url(Assets/singaporeCity4.jpg);
   background-size: cover;
   background-attachment: fixed;
@@ -13,40 +13,125 @@ body {
   position: relative;
   }
 
+/* ------------------------ */
+/* --------Navbar-----------*/
+/* ------------------------ */
+#navbar {
+  display: none;
+}
+
+#buslogo {
+  display: none;
+}
+
+#singaporelogo {
+  display: none;
+}
+/* ------------------------ */
+/* ------end of navbar------*/
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* -------bus logo */
+/* ------------------------ */
 #bus_logo2 {
-  height: 150px;
-  width: 700px;
+  height: 70px;
+  width: 300px;
   transition: transform 0.3s;
+  margin: 0;
 }
 
 #bus_logo2:hover {
   transform: scale(1.1);
 }
-
-#buslogo {
-  height: 60px;
-  width: 260px;
-}
-
-#singaporelogo {
-  height: 50px;
-  width: 180px;
-}
-
- a {
-   margin-bottom: 10px;
- }
+/* ------------------------ */
+/* ----end of bus logo */
+/* ------------------------ */
 
 .card-body {
   background: hsl(0 0% 0% / 0.1);
   backdrop-filter: blur(0.4rem);
 }
 
-.navbar {
-  background: hsl(0 0% 0% / 0.1);
-  backdrop-filter: blur(3rem);
+h6 {
+  display: none;
 }
 
 footer {
-  margin-top: 40px;
+  display: none;
 }
+
+/* ------------------------ */
+/* ----- tablet screen */
+/* ------------------------ */
+@media only screen and (min-width: 768px) {
+  #bus_logo2 {
+    height: 100px;
+    width: 440px;
+  }
+
+  h6 {
+    display: block;
+  }
+}
+/* ------------------------ */
+/* --end of tablet screen */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* -----pc screen */
+/* ------------------------ */
+@media only screen and (min-width: 1000px) {
+  #navbar {
+    display: block;
+    background: hsl(0 0% 0% / 0.1);
+    backdrop-filter: blur(3rem);
+  }
+
+  #buslogo {
+    display: block;
+    height: 60px;
+    width: 260px;
+  }
+
+  #singaporelogo {
+    display: block;
+    height: 50px;
+    width: 180px;
+  }
+
+  #bus_logo2 {
+    height: 150px;
+    width: 700px;
+  }
+
+  #container-1 {
+    width: 90%;
+    max-width: 90rem;
+  }
+
+  /* footer {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  } */
+}
+/* ------------------------ */
+/* -----end of pc screen */
+/* ------------------------ */
+
+
+/* ------------------------ */
+/* -----big pc screen */
+/* ------------------------ */
+@media only screen and (min-width: 1400px) {
+  #bus_logo2 {
+    height: 180px;
+    width: 800px;
+  }
+}
+/* ------------------------ */
+/* --end of big pc screen */
+/* ------------------------ */
